@@ -1,0 +1,44 @@
+
+<header>
+    <h1><?= $title ?></h1>
+</header>
+<br>
+    <?= $content ?>
+<table class="person">
+    <tr>
+        <td>Jméno:</td>
+        <td><?= $name ?></td>
+    </tr>
+    <tr>
+        <td>Příjmení:</td>
+        <td><?= $surname ?></td>
+    </tr>
+    <tr>
+        <td>Rodné číslo:</td>
+        <td><?= $identification_number ?></td>
+    </tr>
+    <tr>
+        <td>Adresa:</td>
+        <td><?= $adress ?></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><?= $email ?></td>
+    </tr>
+    <tr>
+        <td>Telefon:</td>
+        <td><?= $phone_number ?></td>
+    </tr>
+    <tr>
+        <td>Pojištění:</td>
+            <td><a href="insurance/<?= $insurance_url ?>"><?= $type_of_insurance ?></a></td>
+    </tr>
+</table>
+<nav>
+    <ul>
+
+        <li><a href="person">Zpět</a></li>
+
+    </ul>
+</nav>
+</section>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <base href="/localhost" />
+    <meta charset="UTF-8" />
+    <title><?= $title ?></title>
+    <meta name="description" content="<?= $description ?>" />
+    <meta name="keywords" content="<?= $keywords ?>" />
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+
+<body>
+<header>
+    <div class="header-title">
+        <h1>Evidence pojištěných</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="about">O aplikaci</a></li>
+            <li><a href="person">Pojištěnci</a></li>
+            <li><a href="contact">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<?php foreach ($messages as $message): ?>
+    <p class="message"><?= $message ?></p>
+<?php endforeach ?>
+
+<br clear="both" />
+
+<article>
+    <?php $this->controller->listView(); ?>
+</article>
+
+<footer>
+    <p>Evidence Pojištěných &copy; 2024</p>
+</footer>
+</body>
+</html>

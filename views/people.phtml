@@ -1,0 +1,37 @@
+<h1>Seznam pojištěných</h1>
+<table>
+    <thead>
+    <td>Jméno</td>
+    <td>Rodné číslo</td>
+    <td>Adresa</td>
+    <td>Akce</td>
+    </thead>
+    <?php foreach ($people as $person) : ?>
+        <tr>
+            <td>
+                <a href="person/<?= $person['url'] ?>"><?= $person['name'] . ' ' . $person['surname'] ?></a>
+            </td>
+            <td>
+                <?= $person['identification_number'] ?></a>
+            </td>
+            <td>
+                <?= $person['adress'] ?></a>
+            </td>
+            <td>
+                <nav>
+                    <ul>
+                        <li><a href="editor/<?= $person['url'] ?>">Editovat</a><li>
+                        <li><a href="person/<?= $person['url'] ?>/odstranit">Odstranit</a><li>
+                    </ul>
+                </nav>
+            </td>
+        </tr>
+    <?php endforeach ?>
+</table>
+<nav>
+    <ul>
+
+        <li><a href="editor">Přidat pojištěného</a><li>
+
+    </ul>
+</nav>

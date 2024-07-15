@@ -1,0 +1,42 @@
+<h1>Editor pojištěných</h1>
+
+<form method="post">
+    <input type="hidden" name="insured_id" value="<?= $person['insured_id'] ?>" />
+    <label>
+        Jméno<br />
+        <input type="text" name="name" value="<?= $person['name'] ?>" />
+    </label><br />
+    <label>
+        Příjmení<br />
+        <input type="text" name="surname" value="<?= $person['surname'] ?>" />
+    </label><br />
+    <label>
+        Rodné číslo<br />
+        <input type="text" name="identification_number" value="<?= $person['identification_number'] ?>" />
+    </label><br />
+    <label>
+        Adresa<br />
+        <input type="text" name="adress" value="<?= $person['adress'] ?>" />
+    </label><br />
+    <label>
+        Email<br />
+        <input type="email" name="email" value="<?= $person['email'] ?>" />
+    </label><br />
+    <label>
+        Telefon<br />
+        <input type="tel" name="phone_number" value="<?= $person['phone_number'] ?>" />
+    </label><br />
+    <label>
+        Pojištění<br />
+        <select name="insurance_fk">
+            <?php foreach ($insuranceTypes as $insurance): ?>
+                <option value="<?= htmlspecialchars($insurance['insurance_id'], ENT_QUOTES) ?>" <?= isset($person['insurance_fk']) && $insurance['insurance_id'] == $person['insurance_fk'] ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($insurance['type_of_insurance'], ENT_QUOTES) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </label><br />
+    <input type="hidden" name="url" value="<?= $person['url'] ?>" />
+
+    <input type="submit" value="Uložit pojištěného" />
+</form>
